@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" modified="2022-09-21T00:51:16.759Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.42" etag="F2QB3r6Hl0MaVaDi0ymA" version="20.3.3" type="github">
+  <diagram name="Page-1" id="f1b7ffb7-ca1e-a977-7cf5-a751b3c06c05">
+    <mxGraphModel dx="1421" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="11H3guOvOTLBzTWYsB_8-62" value="Map" style="whiteSpace=wrap;html=1;aspect=fixed;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="360" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-63" value="type of event (drop down menu)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry x="200" y="160" width="440" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-64" value="location center point" style="rounded=0;whiteSpace=wrap;html=1;fontSize=23;" vertex="1" parent="1">
+          <mxGeometry x="200" y="210" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-65" value="&amp;nbsp;distance&lt;br&gt;radius" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="560" y="210" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-67" value="Locations/events&lt;br&gt;click on the event and location pops up&amp;nbsp;&lt;br&gt;on the map side and this box pulls up event&lt;br&gt;information" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="440" y="280" width="320" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-71" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="600" y="160" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-72" value="recent searches (using the hover property)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="280" y="100" width="267" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-73" value="Main Title" style="rounded=1;whiteSpace=wrap;html=1;fontSize=26;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="193" y="40" width="440" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-74" value="upcoming events" style="rounded=0;whiteSpace=wrap;html=1;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="160" y="680" width="550" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-75" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="390" y="610" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-76" value="2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="710" y="610" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="11H3guOvOTLBzTWYsB_8-77" value="3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="660" y="880" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
