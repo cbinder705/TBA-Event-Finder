@@ -17,8 +17,8 @@ events();
 function DisplayEvents(data) {
   // links to html
   const name = data;
-  const description = data.events[0];
-  console.log(name, description);
+  const type = data.events;
+  console.log(name, type);
 }
 
 // Local Storage
