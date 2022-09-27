@@ -11,14 +11,16 @@ function events(city) {
       ""
   )
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => this.DisplayEvents(data));
 }
 events();
 function DisplayEvents(data) {
   // links to html
   const name = data;
   const description = data.events;
+  console.log(name, description);
 }
+
 // Local Storage
 
 // functioning search and defined input buttons
