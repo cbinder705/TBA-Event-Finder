@@ -17,7 +17,7 @@ events();
 function DisplayEvents(data) {
   // links to html
   const name = data;
-  const description = data.events;
+  const description = data.events[0];
   console.log(name, description);
 }
 
