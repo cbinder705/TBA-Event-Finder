@@ -6,9 +6,9 @@
 
 function events(city) {
   fetch(
-    "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=KDhnCyJ8Hg2vSizuLF0Xs4WtQFp2wQQo&city=" +
-      city + // user inputs location
-      ""
+    "https://app.ticketmaster.com/discovery/v2/events.json?size=1&city=" +
+      city +
+      "&apikey=25HXWz0Ao4txUIjAm8EGenva5u1M7pt0"
   )
     .then((response) => response.json())
     .then((data) => this.DisplayEvents(data));
@@ -16,8 +16,8 @@ function events(city) {
 events();
 function DisplayEvents(data) {
   // links to html
-  const name = data;
-  const type = data.events;
+  var name = data;
+  var type = data.events;
   console.log(name, type);
 }
 //
