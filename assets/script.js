@@ -20,7 +20,7 @@ function DisplayEvents(data) {
   const type = data.events;
   console.log(name, type);
 }
-
+//
 // Local Storage
 
 // functioning search and defined input buttons
