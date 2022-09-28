@@ -16,9 +16,10 @@ function events(city) {
 events();
 function DisplayEvents(data) {
   const location = data;
-  const name = data.eventName;
-  const url = data.link;
+  const { name, url } = data.events[0];
+  console.log(location, name, url);
 }
+DisplayEvents();
 //
 // Local Storage
 
