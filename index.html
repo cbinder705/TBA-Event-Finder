@@ -4,41 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!--Import materialize.css-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+wip-alb-page-design
+    <title>Local Event Finder</title>
+    <!--9/27/22 alexis note: 1.0.0 doesn't seem to work.  If use 0.97.8, the button logic works-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>     <!--Let browser know website is optimized for mobile-->
     <link rel="stylesheet" href="assets/style/style.css" />
   </head>
-  <body>
-    <div class="test"> blah</div>
+  <body style="background-image:url(./assets/images/events12.jpg);
+               background-repeat: no-repeat;
+               background-size: cover;
+               background-attachment:inherit;"> 
+
+    <div class="container">
+      <div class="row">
+        <br>
+       <h3 class="center-align">Local Event Finder</h3>
+       <p class="flow-text">Welcome to our local event finder.  Select your event type and enter the desired city for the event (ie. Trenton, Philadelphia, Princeton, etc.).
+         Then press the View Events button.</p>
+      <form class="col s12">
+       <div class="card-panel">
+        <h6>Event Type:</h6>
+        <select class="browser-default" id="eventtype">
+          <option value="" disabled selected>Select the event type</option>
+          <option value="sports">Sports</option>
+          <option value="concerts">Concerts</option>
+          <option value="comedy">Comedy Shows</option>
+        </select>
+         <div class="input-field">
+           <input type="text" placeholder="Enter City" id="location">
+           <label class="active" for="location">Location</label>
+         </div>  
+         <a href="" class="btn">View Events</a> <!--add validation that event type is selected and location is entered and valid-->
+        </div>
+      </form> 
+      <textarea style="display: inline; height:200px; width: 300px;" id="apimap" class="materialize-textarea" cols="30" rows="10">Map</textarea>
+        <iframe
+          height="100px"
+          id="innermap"
+          src=""
+          frameborder="0"
+        ></iframe>
+         <textarea style="display:  inline; height:200px; width: 300px;" id="apievents" class="materialize-textarea" cols="30" rows="10">Events</textarea>
+        <iframe
+          height="100px"
+          id="innerevents"
+          src=""
+          frameborder="0"
+         ></iframe>
+         <textarea style="display: block; height:200px; width: 300px;" id="prevsearches" class="materialize-textarea" cols="30" rows="10">Previous Searches</textarea>
+        <iframe
+          height="100px"
+          id="innerprevsearches"
+          src=""
+          frameborder="0"
+        ></iframe>
+     </div> <!-- row-->
+    </div><!-- ./container  leave at end before scripts-->
+
+    <!--Import jQuery before materialize.js-->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
     <!--JavaScript at end of body for optimized loading-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>  
 
     <script src="assets/script.js"></script>
-
-    <!--Demo for google map element and apis-->
-    <h3>Google Maps Demo</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
- 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-    defer
-    ></script>
-    <link src="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY" >
-
-
+    
   </body>
 </html>
