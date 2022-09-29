@@ -20,7 +20,7 @@ so I can attend them during my free time
 link to the wireframe https://app.diagrams.net/
 
 
-This page will allow anyone to easily find event in jersey :
+This page will allow anyone to easily find events all over jersey :
 restaurants
 concerts
 shows,etc
