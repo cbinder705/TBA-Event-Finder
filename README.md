@@ -1,3 +1,14 @@
+![Event_finder](https://user-images.githubusercontent.com/82961272/192934542-c82e5dfd-bd1f-4128-9326-e3ee49cbfeda.png)
+![GitHub all releases](https://img.shields.io/github/downloads/chrisaez1/TBA-Event-finder/total?label=Google-Maps-api&logoColor=red&style=flat-square)
+![GitHub all releases](https://img.shields.io/github/downloads/chrisaez1/BA-Event-Finder/pull/9/total?label=js&logoColor=red&style=flat-square)
+
+
+This projetc was design for those whom are always looking for something to do in jersey .either visitors or jersey residents.
+
+![GitHub all releases](https://img.shields.io/github/downloads/chrisaez1/BA-Event-Finder/pull/9/total?label=js&logoColor=red&style=flat-square)
+
+
+
 # TBA-Event-Finder
 
 ## USER STORY
