@@ -15,8 +15,8 @@ function events(city) {
 }
 events();
 function DisplayEvents(data) {
-  const location = data; // data from fetch
-  const { name, url } = data.events[0]; // extracting name of event and link to event from json array
+  let location = data; // data from fetch
+  let { name, url } = data.events[0]; // extracting name of event and link to event from json array
   console.log(location, name, url); // testing purposes
 }
 DisplayEvents();
