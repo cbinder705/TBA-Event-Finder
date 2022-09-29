@@ -18,3 +18,13 @@ I want to be able to find events and locations
 so I can attend them during my free time
 
 link to the wireframe https://app.diagrams.net/
+
+
+This page will allow anyone to easily find event in jersey
+restaurants
+concerts
+shows,etc
+easy navigation
+user fiendly.
+
+![jersey-events](https://user-images.githubusercontent.com/82961272/193139705-75d516c6-e688-4727-9a0b-f1d630d53ce3.jpeg)
