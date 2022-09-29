@@ -21,7 +21,7 @@ link to the wireframe https://app.diagrams.net/
 
 
 This page will allow anyone to easily find events all over jersey :
-restaurants
+restaurants, historic places ,beach
 concerts
 shows,etc
 easy navigation
