@@ -1,8 +1,7 @@
 // initial commit
 
 // Use of the Maps API
-const geocoder = new google.maps.Geocoder();
- 
+
 function initMap() {
     // The location of Uluru
     var uluru = { lat: -25.344, lng: 131.031 };
@@ -17,9 +16,6 @@ function initMap() {
       map: map,
     });
   }
-  submitButton.addEventListener("click", () =>
-    geocode({ address: inputText.value })
-  );
 
 // Use of the Events API
 
@@ -40,6 +36,4 @@ function DisplayEvents(data) {
   console.log(name, type);
 }
 
-// Local Storage
-
-// functioning search and defined input buttons
+// Instantiate a map and platform object:
