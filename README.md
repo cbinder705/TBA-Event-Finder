@@ -1,30 +1,62 @@
-![Event_finder](https://user-images.githubusercontent.com/82961272/192934542-c82e5dfd-bd1f-4128-9326-e3ee49cbfeda.png)
-![GitHub all releases](https://img.shields.io/github/downloads/chrisaez1/TBA-Event-finder/total?label=Google-Maps-api&logoColor=red&style=flat-square)
-![GitHub all releases](https://img.shields.io/github/downloads/chrisaez1/BA-Event-Finder/pull/9/total?label=js&logoColor=red&style=flat-square)
+# Rutgers Bootcamp Project 1 Group #3- Event Finder "Find your Fun!"
 
+## Description
 
-This projetc was design for those whom are always looking for something to do in jersey .either visitors or jersey residents.
+We created a easy-to-use tool to help you enjoy your free time!
 
-![GitHub all releases](https://img.shields.io/github/downloads/chrisaez1/BA-Event-Finder/pull/9/total?label=js&logoColor=red&style=flat-square)
+It’s a local event finder called “Find your Fun!”.  
 
+First, select the type of event you want to enjoy, which can be sports, concerts or comedy shows.
 
+Next, enter the city where you live or where you will be.  
+Press the View Events button and Voila!  A map of the area and events in that location appear before your eyes!
 
-# TBA-Event-Finder
+You can even see a list of your previous event searches!
+
 
 ## USER STORY
 
-As a user
-I want to be able to find events and locations
-so I can attend them during my free time
+As a user<br>
+I WANT to view a website that shows local sports, concerts and comedy shows<br>
+SO THAT I can attend an event during my free time<br>
 
-link to the wireframe https://app.diagrams.net/
+## Technologies Used
 
+We used the VS Code software to edit code, git and git branches to work on the code among our group and pull code to our local machines and then git again to push our final versions from our branches to the GitHub main branch.  
 
-This page will allow anyone to easily find events all over jersey :
-restaurants, historic places ,beach
-concerts
-shows,etc
-easy navigation
-user fiendly.
+We also used Server-side APIs: Ticketmaster for events, XXXXX for XXX, CSS framework: Materialize, HTML, CSS, JavaScript, VS Code, Git/GitHub and persistent data/local storage to retrieve past event searches.  This website is responsive, including the background image.
 
-![jersey-events](https://user-images.githubusercontent.com/82961272/193139705-75d516c6-e688-4727-9a0b-f1d630d53ce3.jpeg)
+## Usage
+
+Here's a link to the deployed website in GitHub:
+
+https://cbinder705.github.io/TBA-Event-Finder/
+
+Here are 2 screenshots of the website:
+    
+![website-image](assets/images/event-finder-screen-capture.jpg)
+    
+![website-image](assets/images/event-finder-screen-capture-with-types.jpg)
+    
+## Credits
+N/A
+
+## License
+
+As this is a class project, no license is needed.
+
+## Badges
+
+N/A
+
+## Features
+
+The main features of this website allow people to select the type of event they want to look up from either Sports, Concerts or Comedy Shows.  They also enter the location where they want to go to the event.  Then they push a View Events button that causes a Google Map, events list and previous event searches to be displayed at the bottom of the page.
+
+## How-to-Contribute
+
+N/A
+
+## Tests
+
+We tested this website as a team as to ensure proper functionality.
