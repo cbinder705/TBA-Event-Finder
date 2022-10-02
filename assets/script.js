@@ -3,15 +3,16 @@
 // Use of the Maps API
 
 // Use of the Events API
-function events(city) {
+function events(location) {
   fetch(
     "https://app.ticketmaster.com/discovery/v2/events.json?&city=" +
-      city + // added string to be able to search for any city
+      location + // added string to be able to search for any city
       "&apikey=25HXWz0Ao4txUIjAm8EGenva5u1M7pt0"
   )
     .then((response) => response.json())
     .then(DisplayEvents)
     .then(initMap);
+  var location = document.getElementById("location").value;
 }
 events();
 function DisplayEvents(data) {
@@ -52,12 +53,11 @@ function DisplayEvents(data) {
   let eventLatitude3 = parseFloat(evtLatitude3);
   let eventLongitude3 = parseFloat(evtLongitude3);
   let evtLatitude4 =
-    data._embedded.events[6]._embedded.venues[0].location.latitude;
+    data._embedded.events[4]._embedded.venues[0].location.latitude;
   let evtLongitude4 =
-    data._embedded.events[6]._embedded.venues[0].location.longitude;
+    data._embedded.events[4]._embedded.venues[0].location.longitude;
   let eventLatitude4 = parseFloat(evtLatitude4);
   let eventLongitude4 = parseFloat(evtLongitude4);
-
   localStorage.setItem("Latitude0", eventLatitude0);
   localStorage.setItem("Longitude0", eventLongitude0);
   localStorage.setItem("Latitude1", eventLatitude1);
@@ -84,7 +84,12 @@ function initMap() {
   let lat4 = localStorage.getItem("Latitude4");
   let lng4 = localStorage.getItem("Longitude4");
 
-  var location = new google.maps.LatLng(lat0, lng0);
+  var lat = localStorage.getItem("Latitude");
+  var lng = localStorage.getItem("Longitude");
+  console.log(lat);
+  console.log(lng);
+
+  var location = new google.maps.LatLng(lat, lng);
 
   var location0 = new google.maps.LatLng(lat0, lng0);
   var location1 = new google.maps.LatLng(lat1, lng1);
@@ -92,7 +97,7 @@ function initMap() {
   var location3 = new google.maps.LatLng(lat3, lng3);
   var location4 = new google.maps.LatLng(lat4, lng4);
   // The map, centered at  Set to search box results | Axios
-  const map = new google.maps.Map(document.getElementById("map"), {
+  var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 5,
     center: location,
   });
