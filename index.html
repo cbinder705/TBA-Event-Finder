@@ -108,7 +108,7 @@ Events </textarea>
       function geocode(){
         document.getElementById("clicky").addEventListener("click", function(){
         var location = document.getElementById("location").value;
-
+        
         console.log(location);
           axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
           params:{
@@ -127,6 +127,7 @@ Events </textarea>
         var longitude = parseFloat(lng);
         localStorage.setItem('Latitude', latitude)
         localStorage.setItem('Longitude', longitude)
+        window.location.reload();
       })
     
       .catch(function(error){
