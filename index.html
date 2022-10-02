@@ -54,14 +54,21 @@
             <!--add validation that event type is selected and location is entered and valid-->
           </div>
         </form>
-        <textarea
+        <div
           style="display: inline; height: 200px; width: 300px"
           id="apimap"
           class="materialize-textarea"
           cols="30"
           rows="10"
         >
-Map</textarea
+       
+
+<!--The div element for the map -->
+<div id="map"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+defer >
+</script></div
         >
         <iframe height="100px" id="innermap" src="" frameborder="0"></iframe>
         <textarea
@@ -70,28 +77,13 @@ Map</textarea
           class="materialize-textarea"
           cols="30"
           rows="10"
+
         >
-Events</textarea
-        >
-        <iframe height="100px" id="innerevents" src="" frameborder="0"></iframe>
-        <textarea
-          style="display: block; height: 200px; width: 300px"
-          id="prevsearches"
-          class="materialize-textarea"
-          cols="30"
-          rows="10"
-        >
-Previous Searches</textarea
-        >
-        <iframe
-          height="100px"
-          id="innerprevsearches"
-          src=""
-          frameborder="0"
-        ></iframe>
+Events </textarea>
       </div>
-      <!-- row--> </div
-    ><!-- ./container  leave at end before scripts-->
+      <!-- row-->
+      </div>
+      <!-- ./container  leave at end before scripts-->
 
     <!--Import jQuery before materialize.js-->
     <script
@@ -105,5 +97,36 @@ Previous Searches</textarea
     ></script>
 
     <script src="assets/script.js"></script>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ 
+    <script>
+      //Call Geocode
+      geocode();
+ 
+      function geocode(){
+        var location = '22 Main st Boston MA';
+        axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
+        params:{
+          address:location,
+          key:'AIzaSyAJqPiU55pKZCjTYGXfzRdVF1pHtM77u30'
+        }
+      })
+      .then(function(response){
+        //Log full response
+        console.log(response)
+ 
+        //Formatted Address
+        console.log(response.data.results[0].geometry.location);
+      })
+      .catch(function(error){
+        console.log(error);
+    });
+  }
+    </script>
+    
+
   </body>
+
 </html>
