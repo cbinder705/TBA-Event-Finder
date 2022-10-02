@@ -16,14 +16,24 @@ function DisplayEvents(data) {
   //Need to display on page
   let eventName0 = data._embedded.events[0].name;
   let eventLink0 = data._embedded.events[0].url;
+  localStorage.setItem("Name0", eventName0);
+  localStorage.setItem("Url0", eventLink0);
   let eventName1 = data._embedded.events[1].name;
   let eventLink1 = data._embedded.events[1].url;
+  localStorage.setItem("Name1", eventName1);
+  localStorage.setItem("Url1", eventLink1);
   let eventName2 = data._embedded.events[2].name;
   let eventLink2 = data._embedded.events[2].url;
+  localStorage.setItem("Name2", eventName2);
+  localStorage.setItem("Url2", eventLink2);
   let eventName3 = data._embedded.events[3].name;
   let eventLink3 = data._embedded.events[3].url;
+  localStorage.setItem("Name3", eventName3);
+  localStorage.setItem("Url3", eventLink3);
   let eventName4 = data._embedded.events[4].name;
   let eventLink4 = data._embedded.events[4].url;
+  localStorage.setItem("Name4", eventName4);
+  localStorage.setItem("Url4", eventLink4);
 
   let evtLatitude0 =
     data._embedded.events[0]._embedded.venues[0].location.latitude;
@@ -50,9 +60,9 @@ function DisplayEvents(data) {
   let eventLatitude3 = parseFloat(evtLatitude3);
   let eventLongitude3 = parseFloat(evtLongitude3);
   let evtLatitude4 =
-    data._embedded.events[6]._embedded.venues[0].location.latitude;
+    data._embedded.events[4]._embedded.venues[0].location.latitude;
   let evtLongitude4 =
-    data._embedded.events[6]._embedded.venues[0].location.longitude;
+    data._embedded.events[4]._embedded.venues[0].location.longitude;
   let eventLatitude4 = parseFloat(evtLatitude4);
   let eventLongitude4 = parseFloat(evtLongitude4);
 
@@ -81,16 +91,7 @@ function initMap() {
   let lng3 = localStorage.getItem('Longitude3');
   let lat4 = localStorage.getItem('Latitude4');
   let lng4 = localStorage.getItem('Longitude4');
-  let lat0 = localStorage.getItem("Latitude0");
-  let lng0 = localStorage.getItem("Longitude0");
-  let lat1 = localStorage.getItem("Latitude1");
-  let lng1 = localStorage.getItem("Longitude1");
-  let lat2 = localStorage.getItem("Latitude2");
-  let lng2 = localStorage.getItem("Longitude2");
-  let lat3 = localStorage.getItem("Latitude3");
-  let lng3 = localStorage.getItem("Longitude3");
-  let lat4 = localStorage.getItem("Latitude4");
-  let lng4 = localStorage.getItem("Longitude4");
+
 
 
   var lat = localStorage.getItem('Latitude');
@@ -105,7 +106,8 @@ function initMap() {
   var location2 = new google.maps.LatLng(lat2, lng2);
   var location3 = new google.maps.LatLng(lat3, lng3);
   var location4 = new google.maps.LatLng(lat4, lng4);
-  // The map, centered at  Set to search box results | Axios
+
+  // The map, centered to the location given at Axios
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 5,
     center: location,

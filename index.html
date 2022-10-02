@@ -41,13 +41,6 @@
         >
         <form class="col s12">
           <div class="card-panel">
-            <h6>Event Type:</h6>
-            <select class="browser-default" id="eventtype">
-              <option value="" disabled selected>Select the event type</option>
-              <option value="sports">Sports</option>
-              <option value="concerts">Concerts</option>
-              <option value="comedy">Comedy Shows</option>
-            </select>
             <div class="input-field">
               <input type="text" placeholder="Enter City" id="location" />
               <label class="active" for="location">Location</label>
@@ -69,8 +62,8 @@
           <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
             defer
-          ></script
-        ></div>
+          ></script>
+        </div>
         <iframe height="100px" id="innermap" src="" frameborder="0"></iframe>
         <textarea
           style="display: inline; height: 200px; width: 300px"
@@ -84,7 +77,7 @@ Events </textarea
       </div>
       <!-- row-->
     </div>
-    <!-- ./container  leave at end before scripts-->
+    <!-- ./container  leave at end before scripts | needs to be moved and set to display ticket master results-->
 
     <!--Import jQuery before materialize.js-->
     <script
@@ -104,11 +97,11 @@ Events </textarea
     <script>
       //Call Geocode
       geocode();
-      
+     
       function geocode(){
         document.getElementById("clicky").addEventListener("click", function(){
         var location = document.getElementById("location").value;
-        
+       
         console.log(location);
           axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
           params:{
@@ -129,36 +122,14 @@ Events </textarea
         localStorage.setItem('Longitude', longitude)
         window.location.reload();
       })
-    
+   
       .catch(function(error){
         console.log(error);
     });
   });
   }
-  
+ 
     </script>
-    
 
-      function geocode() {
-        var location = "22 Main st Boston MA";
-        axios
-          .get("https://maps.googleapis.com/maps/api/geocode/json", {
-            params: {
-              address: location,
-              key: "AIzaSyAJqPiU55pKZCjTYGXfzRdVF1pHtM77u30",
-            },
-          })
-          .then(function (response) {
-            //Log full response
-            console.log(response);
-
-            //Formatted Address
-            console.log(response.data.results[0].geometry.location);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      }
-    </script>
   </body>
 </html>
