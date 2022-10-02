@@ -2,7 +2,6 @@
 
 // Use of the Maps API
 
-
 // Use of the Events API
 function events(city) {
   fetch(
@@ -10,12 +9,10 @@ function events(city) {
   )
     .then((response) => response.json())
     .then(DisplayEvents)
-    .then(initMap)
+    .then(initMap);
 }
 events();
 function DisplayEvents(data) {
-
-
   //Need to display on page
   let eventName0 = data._embedded.events[0].name;
   let eventLink0 = data._embedded.events[0].url;
@@ -28,39 +25,47 @@ function DisplayEvents(data) {
   let eventName4 = data._embedded.events[4].name;
   let eventLink4 = data._embedded.events[4].url;
 
+  let evtLatitude0 =
+    data._embedded.events[0]._embedded.venues[0].location.latitude;
+  let evtLongitude0 =
+    data._embedded.events[0]._embedded.venues[0].location.longitude;
+  let eventLatitude0 = parseFloat(evtLatitude0);
+  let eventLongitude0 = parseFloat(evtLongitude0);
+  let evtLatitude1 =
+    data._embedded.events[1]._embedded.venues[0].location.latitude;
+  let evtLongitude1 =
+    data._embedded.events[1]._embedded.venues[0].location.longitude;
+  let eventLatitude1 = parseFloat(evtLatitude1);
+  let eventLongitude1 = parseFloat(evtLongitude1);
+  let evtLatitude2 =
+    data._embedded.events[2]._embedded.venues[0].location.latitude;
+  let evtLongitude2 =
+    data._embedded.events[2]._embedded.venues[0].location.longitude;
+  let eventLatitude2 = parseFloat(evtLatitude2);
+  let eventLongitude2 = parseFloat(evtLongitude2);
+  let evtLatitude3 =
+    data._embedded.events[3]._embedded.venues[0].location.latitude;
+  let evtLongitude3 =
+    data._embedded.events[3]._embedded.venues[0].location.longitude;
+  let eventLatitude3 = parseFloat(evtLatitude3);
+  let eventLongitude3 = parseFloat(evtLongitude3);
+  let evtLatitude4 =
+    data._embedded.events[6]._embedded.venues[0].location.latitude;
+  let evtLongitude4 =
+    data._embedded.events[6]._embedded.venues[0].location.longitude;
+  let eventLatitude4 = parseFloat(evtLatitude4);
+  let eventLongitude4 = parseFloat(evtLongitude4);
 
-  let evtLatitude0 = data._embedded.events[0]._embedded.venues[0].location.latitude;
-  let evtLongitude0 = data._embedded.events[0]._embedded.venues[0].location.longitude;
-      let eventLatitude0 = parseFloat(evtLatitude0);
-      let eventLongitude0 = parseFloat(evtLongitude0);
-  let evtLatitude1 = data._embedded.events[1]._embedded.venues[0].location.latitude;
-  let evtLongitude1 = data._embedded.events[1]._embedded.venues[0].location.longitude;
-      let eventLatitude1 = parseFloat(evtLatitude1);
-      let eventLongitude1 = parseFloat(evtLongitude1);
-  let evtLatitude2 = data._embedded.events[2]._embedded.venues[0].location.latitude;
-  let evtLongitude2 = data._embedded.events[2]._embedded.venues[0].location.longitude;
-      let eventLatitude2 = parseFloat(evtLatitude2);
-      let eventLongitude2 = parseFloat(evtLongitude2);
-  let evtLatitude3 = data._embedded.events[3]._embedded.venues[0].location.latitude;
-  let evtLongitude3 = data._embedded.events[3]._embedded.venues[0].location.longitude;
-      let eventLatitude3 = parseFloat(evtLatitude3);
-      let eventLongitude3 = parseFloat(evtLongitude3);
-  let evtLatitude4 = data._embedded.events[6]._embedded.venues[0].location.latitude;
-  let evtLongitude4 = data._embedded.events[6]._embedded.venues[0].location.longitude;
-      let eventLatitude4 = parseFloat(evtLatitude4);
-      let eventLongitude4 = parseFloat(evtLongitude4);
-  
-  
-  localStorage.setItem('Latitude0' , eventLatitude0);
-  localStorage.setItem('Longitude0' , eventLongitude0);
-  localStorage.setItem('Latitude1' , eventLatitude1);
-  localStorage.setItem('Longitude1' , eventLongitude1);
-  localStorage.setItem('Latitude2' , eventLatitude2);
-  localStorage.setItem('Longitude2' , eventLongitude2);
-  localStorage.setItem('Latitude3' , eventLatitude3);
-  localStorage.setItem('Longitude3' , eventLongitude3);
-  localStorage.setItem('Latitude4' , eventLatitude4);
-  localStorage.setItem('Longitude4' , eventLongitude4);
+  localStorage.setItem("Latitude0", eventLatitude0);
+  localStorage.setItem("Longitude0", eventLongitude0);
+  localStorage.setItem("Latitude1", eventLatitude1);
+  localStorage.setItem("Longitude1", eventLongitude1);
+  localStorage.setItem("Latitude2", eventLatitude2);
+  localStorage.setItem("Longitude2", eventLongitude2);
+  localStorage.setItem("Latitude3", eventLatitude3);
+  localStorage.setItem("Longitude3", eventLongitude3);
+  localStorage.setItem("Latitude4", eventLatitude4);
+  localStorage.setItem("Longitude4", eventLongitude4);
 }
 
 // Instantiate a map and platform object:
@@ -76,6 +81,17 @@ function initMap() {
   let lng3 = localStorage.getItem('Longitude3');
   let lat4 = localStorage.getItem('Latitude4');
   let lng4 = localStorage.getItem('Longitude4');
+  let lat0 = localStorage.getItem("Latitude0");
+  let lng0 = localStorage.getItem("Longitude0");
+  let lat1 = localStorage.getItem("Latitude1");
+  let lng1 = localStorage.getItem("Longitude1");
+  let lat2 = localStorage.getItem("Latitude2");
+  let lng2 = localStorage.getItem("Longitude2");
+  let lat3 = localStorage.getItem("Latitude3");
+  let lng3 = localStorage.getItem("Longitude3");
+  let lat4 = localStorage.getItem("Latitude4");
+  let lng4 = localStorage.getItem("Longitude4");
+
 
   var lat = localStorage.getItem('Latitude');
   var lng = localStorage.getItem('Longitude')
@@ -92,7 +108,7 @@ function initMap() {
   // The map, centered at  Set to search box results | Axios
   var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 5,
-    center: location
+    center: location,
   });
   // The markers 1-5
   const marker0 = new google.maps.Marker({
