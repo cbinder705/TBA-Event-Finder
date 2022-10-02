@@ -71,6 +71,16 @@ function DisplayEvents(data) {
 // Instantiate a map and platform object:
 function initMap() {
   // The location of Uluru
+  let lat0 = localStorage.getItem('Latitude0');
+  let lng0 = localStorage.getItem('Longitude0');
+  let lat1 = localStorage.getItem('Latitude1');
+  let lng1 = localStorage.getItem('Longitude1');
+  let lat2 = localStorage.getItem('Latitude2');
+  let lng2 = localStorage.getItem('Longitude2');
+  let lat3 = localStorage.getItem('Latitude3');
+  let lng3 = localStorage.getItem('Longitude3');
+  let lat4 = localStorage.getItem('Latitude4');
+  let lng4 = localStorage.getItem('Longitude4');
   let lat0 = localStorage.getItem("Latitude0");
   let lng0 = localStorage.getItem("Longitude0");
   let lat1 = localStorage.getItem("Latitude1");
@@ -82,7 +92,13 @@ function initMap() {
   let lat4 = localStorage.getItem("Latitude4");
   let lng4 = localStorage.getItem("Longitude4");
 
-  var location = new google.maps.LatLng(lat0, lng0);
+
+  var lat = localStorage.getItem('Latitude');
+  var lng = localStorage.getItem('Longitude')
+  console.log(lat);
+  console.log(lng);
+  
+  var location = new google.maps.LatLng(lat, lng);
 
   var location0 = new google.maps.LatLng(lat0, lng0);
   var location1 = new google.maps.LatLng(lat1, lng1);
@@ -90,7 +106,7 @@ function initMap() {
   var location3 = new google.maps.LatLng(lat3, lng3);
   var location4 = new google.maps.LatLng(lat4, lng4);
   // The map, centered at  Set to search box results | Axios
-  const map = new google.maps.Map(document.getElementById("map"), {
+  var map = new google.maps.Map(document.getElementById("map"), {
     zoom: 5,
     center: location,
   });
