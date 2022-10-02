@@ -1,23 +1,20 @@
 // initial commit
 
-// Use of the Maps API
+// Use of the Maps APIfunction events(location) {
+fetch(
+  "https://app.ticketmaster.com/discovery/v2/events.json?&city=" +
+    location + // added string to be able to search for any city
+    "&apikey=25HXWz0Ao4txUIjAm8EGenva5u1M7pt0"
+)
+  .then((response) => response.json())
+  .then(DisplayEvents)
+  .then(initMap);
+var location = document.getElementById("location").value;
 
-// Use of the Events API
-function events(location) {
-  fetch(
-    "https://app.ticketmaster.com/discovery/v2/events.json?&city=" +
-      location + // added string to be able to search for any city
-      "&apikey=25HXWz0Ao4txUIjAm8EGenva5u1M7pt0"
-  )
-    .then((response) => response.json())
-    .then(DisplayEvents)
-    .then(initMap);
-  var location = document.getElementById("location").value;
-}
 events();
 function DisplayEvents(data) {
   //Need to display on page
-  let eventName0 = data._embedded.events[0].name;
+  let eventName0 = data._embedded.events[0].name[0];
   let eventLink0 = data._embedded.events[0].url;
   let eventName1 = data._embedded.events[1].name;
   let eventLink1 = data._embedded.events[1].url;
@@ -68,8 +65,20 @@ function DisplayEvents(data) {
   localStorage.setItem("Longitude3", eventLongitude3);
   localStorage.setItem("Latitude4", eventLatitude4);
   localStorage.setItem("Longitude4", eventLongitude4);
+  localStorage.setItem("Name0", eventName0);
+  localStorage.setItem("Link0", eventLink0);
+  localStorage.setItem("Name1", eventName1);
+  localStorage.setItem("Link1", eventLink1);
+  localStorage.setItem("Name2", eventName2);
+  localStorage.setItem("Link2", eventLink2);
+  localStorage.setItem("Name3", eventName3);
+  localStorage.setItem("Link3", eventLink3);
+  localStorage.setItem("Name4", eventName4);
+  localStorage.setItem("Link4", eventLink4);
+  localStorage.setItem("Name5", eventName5);
+  localStorage.setItem("Link5", eventLink5);
 }
-
+DisplayEvents();
 // Instantiate a map and platform object:
 function initMap() {
   // The location of Uluru
@@ -123,6 +132,8 @@ function initMap() {
     map: map,
   });
 }
+
+// Use of the Events API
 
 // Use of the Events API
 // Instantiate a map and platform object:
