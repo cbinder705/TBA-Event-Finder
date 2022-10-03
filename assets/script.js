@@ -80,6 +80,7 @@ function DisplayEvents(data) {
   localStorage.setItem("Longitude3", eventLongitude3);
   localStorage.setItem("Latitude4", eventLatitude4);
   localStorage.setItem("Longitude4", eventLongitude4);
+  document.getElementById("Url0").setAttribute('value', data._embedded.events[0].url);
 }
 function eventupdate(){
   var Name0 = localStorage.getItem("Name0");
