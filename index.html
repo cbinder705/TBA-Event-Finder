@@ -18,6 +18,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Let browser know website is optimized for mobile-->
     <link rel="stylesheet" href="assets/style/style.css" />
+    <script>
+      function myFunction() {
+        document.getElementById("Name0").innerHTML = result
+        document.getElementById("Url0").innerHTML = result
+        document.getElementById("Name1").innerHTML = result
+        document.getElementById("Url1").innerHTML = result
+        document.getElementById("Name2").innerHTML = result
+        document.getElementById("Url2").innerHTML = result
+        document.getElementById("Name3").innerHTML = result
+        document.getElementById("Url3").innerHTML = result
+        document.getElementById("Name4").innerHTML = result
+        document.getElementById("Url4").innerHTML = result
+      }
+    </script>
   </head>
   <body
     style="
@@ -72,9 +86,46 @@
           cols="30"
           rows="10"
         >
-Events </textarea
-        >
+ </textarea>
       </div>
+      <div>
+        <script> 
+          var Name0 = localStorage.getItem("Name0");
+           var Url0 = localStorage.getItem("Url0");
+           var Name1 = localStorage.getItem("Name1");
+           var Url1 = localStorage.getItem("Url1");
+           var Name2 = localStorage.getItem("Name2");
+           var Url2 = localStorage.getItem("Url2");
+           var Name3 = localStorage.getItem("Name3");
+           var Url3 = localStorage.getItem("Url3");
+           var Name4 = localStorage.getItem("Name4");
+           var Url4 = localStorage.getItem("Url4");
+           </script>
+      <ul onload="myFunction()">
+        <li id="Name0"></li>
+        <li id="Url0"></li>
+        <li id="Name1"></li>
+        <li id="Url1"></li>
+        <li id="Name2"></li>
+        <li id="Url2"></li>
+        <li id="Name3"></li>
+        <li id="Url3"></li>
+        <li id="Name4"></li>
+        <li id="Url4"></li>
+        <script>
+        document.getElementById("Name0").innerHTML=Name0
+        document.getElementById("Url0").innerHTML=Url0
+        document.getElementById("Name1").innerHTML=Name1
+        document.getElementById("Url1").innerHTML=Url1
+        document.getElementById("Name2").innerHTML=Name2
+        document.getElementById("Url2").innerHTML=Url2
+        document.getElementById("Name3").innerHTML=Name3
+        document.getElementById("Url3").innerHTML=Url3
+        document.getElementById("Name4").innerHTML=Name4
+        document.getElementById("Url4").innerHTML=Url4
+        </script>
+      </ul>
+    </div>
       <!-- row-->
     </div>
     <!-- ./container  leave at end before scripts | needs to be moved and set to display ticket master results-->
@@ -134,6 +185,7 @@ Events </textarea
   });
 }
     </script>
+
 
   </body>
 </html>
