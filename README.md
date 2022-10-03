@@ -39,7 +39,7 @@ Here's a link to the deployed website in GitHub:
 
 https://cbinder705.github.io/TBA-Event-Finder/
 
-Here are 2 screenshots of the website:
+Here are screenshots of the website:
     
 ![website-image](assets/images/screencapture-1.png)
     
