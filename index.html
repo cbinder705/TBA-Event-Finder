@@ -19,8 +19,9 @@
     <!--Let browser know website is optimized for mobile-->
     <link rel="stylesheet" href="assets/style/style.css" />
   </head>
-  <body  
-    style="background-position: center top;
+  <body
+    style="
+      background-position: center top;
       background-attachment: fixed;
       background-image: url(./assets/images/events12.jpg);
       background-repeat: no-repeat;
@@ -30,68 +31,77 @@
   >
     <div class="container">
       <div class="row">
-        <br />    <br />
+        <br />
+        <br />
+        <iframe height="25px" id="innermap" src="" frameborder="0"></iframe>
         <h3 class="center-align">Local Event Finder</h3>
         <p class="flow-text"
-          >Welcome to our local event finder. Select your event type and enter
-          the desired city for the event (ie. Trenton, Philadelphia, Princeton,
+          >Welcome to our local event finder. Enter
+          the desired city for the events (ie. Trenton, Philidelphia, Baltimore,
           etc.). Then press the View Events button.</p
         >
         <form class="col s12">
           <div class="card-panel">
-            <h6>Event Type:</h6>
-            <select class="browser-default" id="eventtype">
-              <option value="" disabled selected>Select the event type</option>
-              <option value="sports">Sports</option>
-              <option value="concerts">Concerts</option>
-              <option value="comedy">Comedy Shows</option>
-            </select>
             <div class="input-field">
-              <input type="text" placeholder="Enter City" id="location" />
+              <input type="text" placeholder="Enter city" id="location" />
               <label class="active" for="location">Location</label>
             </div>
-            <a href="" class="btn">View Events</a>
+            <a id="clicky" class="btn">View Events</a>
             <!--add validation that event type is selected and location is entered and valid-->
           </div>
         </form>
-        <textarea
+        <div
           style="display: inline; height: 200px; width: 300px"
           id="apimap"
           class="materialize-textarea"
           cols="30"
           rows="10"
         >
-Map</textarea
-        >
-        <iframe height="100px" id="innermap" src="" frameborder="0"></iframe>
-        <textarea
+          <!--The div element for the map -->
+          <div id="map"></div>
+
+          <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJqPiU55pKZCjTYGXfzRdVF1pHtM77u30&callback=initMap&v=weekly"
+            defer
+          ></script>
+        </div>
+        <iframe height="10px" id="innermap" src="" frameborder="0"></iframe>
+        <div
           style="display: inline; height: 200px; width: 300px"
           id="apievents"
           class="materialize-textarea"
           cols="30"
           rows="10"
         >
-Events</textarea
-        >
-        <iframe height="100px" id="innerevents" src="" frameborder="0"></iframe>
-        <textarea
-          style="display: block; height: 200px; width: 300px"
-          id="prevsearches"
-          class="materialize-textarea"
-          cols="30"
-          rows="10"
-        >
-Previous Searches</textarea
-        >
-        <iframe
-          height="100px"
-          id="innerprevsearches"
-          src=""
-          frameborder="0"
-        ></iframe>
+        <div style="text-align:center;">
+          <ul style="display:inline-block;">
+            <ul style="padding:20px; color:white; background-color:#565656; outline: 1px solid black">
+            <li id="Name0"></li>
+            <li id="Url0"></li>
+          </ul>
+          <ul style="padding:20px; color:white; background-color:#565656; outline: 1px solid black">
+            <li id="Name1"></li>
+            <li id="Url1"></li>
+          </ul>
+          <ul style="padding:20px; color:white; background-color:#565656; outline: 1px solid black">
+            <li id="Name2"></li>
+            <li id="Url2"></li>
+          </ul>
+          <ul style="padding:20px; color:white; background-color:#565656; outline: 1px solid black">
+            <li id="Name3"></li>
+            <li id="Url3"></li>
+          </ul>
+          <ul style="padding:20px; color:white; background-color:#565656; outline: 1px solid black">
+            <li id="Name4"></li>
+            <li id="Url4"></li>
+          </ul>
+        </ul>
       </div>
-      <!-- row--> </div
-    ><!-- ./container  leave at end before scripts-->
+    </div>
+    </div>
+    </
+    <iframe height="100px" id="after-events" src="" frameborder="0"></iframe>
+    <!-- ./container  leave at end before scripts | needs to be moved and set to display ticket master results-->
 
     <!--Import jQuery before materialize.js-->
     <script
@@ -105,5 +115,49 @@ Previous Searches</textarea
     ></script>
 
     <script src="assets/script.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+      //Call Geocode
+      geocode();
+     
+      function geocode(){
+        document.getElementById("clicky").addEventListener("click", function(){
+        var location = document.getElementById("location").value;
+       
+        console.log(location);
+          axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
+          params:{
+          address:location,
+          key:'AIzaSyAJqPiU55pKZCjTYGXfzRdVF1pHtM77u30'
+          }
+        })
+      .then(function(response){
+        //Log full response
+        console.log(response)
+ 
+        //Formatted Address
+        
+        lat = response.data.results[0].geometry.location.lat;
+        lng = response.data.results[0].geometry.location.lng;
+        var latitude = parseFloat(lat);
+        var longitude = parseFloat(lng);
+
+        var locate = response.data.results[0].address_components[0].long_name
+        localStorage.setItem('locate', locate);
+
+        localStorage.setItem('Latitude', latitude)
+        localStorage.setItem('Longitude', longitude)
+        window.location.reload();
+      })
+   
+      .catch(function(error){
+        console.log(error);
+    });
+  });
+}
+    </script>
+
   </body>
 </html>

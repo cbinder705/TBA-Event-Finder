@@ -16,6 +16,16 @@ Press the View Events button and Voila!  A map of the area and events in that lo
 As a person with free time<br>
 I WANT to view a website that shows local sports events, concerts and comedy shows<br>
 SO THAT I can select an event to attend<br>
+=======
+First, Enter the state where you live or where you will be.  
+Press the View Events button and Voila!  A map of the area and events in that location appear before your eyes!
+
+
+## USER STORY
+
+As a user<br>
+I WANT to view a website that shows local sports<br>
+SO THAT I can attend an event during my free time<br>
 
 ## Technologies Used
 
@@ -59,7 +69,7 @@ N/A
 
 ## Features
 
-The main features of this website allow people to select the type of event they want to look up from either Sports, Concerts or Comedy Shows.  They also enter the location where they want to go to the event.  Then they push a View Events button that causes a Google Map, events list and previous event searches to be displayed at the bottom of the page.
+The main features of this website allow people to view local Sport events.  They also enter the location where they want to go to the event.  Then they push a View Events button that causes a Google Map and local events to be displayed at the bottom of the page.
 
 ## How-to-Contribute
 
