@@ -6,18 +6,14 @@ We created a easy-to-use tool to help you enjoy your free time!
 
 It’s a local event finder called “Find your Fun!”.  
 
-First, select the type of event you want to enjoy, which can be sports, concerts or comedy shows.
-
-Next, enter the city where you live or where you will be.  
+First, Enter the state where you live or where you will be.  
 Press the View Events button and Voila!  A map of the area and events in that location appear before your eyes!
-
-You can even see a list of your previous event searches!
 
 
 ## USER STORY
 
 As a user<br>
-I WANT to view a website that shows local sports, concerts and comedy shows<br>
+I WANT to view a website that shows local sports<br>
 SO THAT I can attend an event during my free time<br>
 
 ## Technologies Used
@@ -51,7 +47,7 @@ N/A
 
 ## Features
 
-The main features of this website allow people to select the type of event they want to look up from either Sports, Concerts or Comedy Shows.  They also enter the location where they want to go to the event.  Then they push a View Events button that causes a Google Map, events list and previous event searches to be displayed at the bottom of the page.
+The main features of this website allow people to view local Sport events.  They also enter the location where they want to go to the event.  Then they push a View Events button that causes a Google Map and local events to be displayed at the bottom of the page.
 
 ## How-to-Contribute
 

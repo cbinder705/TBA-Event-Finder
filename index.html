@@ -35,24 +35,17 @@
         <br />
         <h3 class="center-align">Local Event Finder</h3>
         <p class="flow-text"
-          >Welcome to our local event finder. Select your event type and enter
-          the desired city for the event (ie. Trenton, Philadelphia, Princeton,
+          >Welcome to our local event finder. Enter
+          the desired state for the events (ie. Trenton, Philidelphia, Baltimore,
           etc.). Then press the View Events button.</p
         >
         <form class="col s12">
           <div class="card-panel">
-            <h6>Event Type:</h6>
-            <select class="browser-default" id="eventtype">
-              <option value="" disabled selected>Select the event type</option>
-              <option value="sports">Sports</option>
-              <option value="concerts">Concerts</option>
-              <option value="comedy">Comedy Shows</option>
-            </select>
             <div class="input-field">
-              <input type="text" placeholder="Enter City" id="location" />
+              <input type="text" placeholder="Enter city" id="location" />
               <label class="active" for="location">Location</label>
             </div>
-            <a href="" class="btn">View Events</a>
+            <a id="clicky" class="btn">View Events</a>
             <!--add validation that event type is selected and location is entered and valid-->
           </div>
         </form>
@@ -67,10 +60,10 @@
           <div id="map"></div>
 
           <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJqPiU55pKZCjTYGXfzRdVF1pHtM77u30&callback=initMap&v=weekly"
             defer
-          ></script
-        ></div>
+          ></script>
+        </div>
         <iframe height="100px" id="innermap" src="" frameborder="0"></iframe>
         <textarea
           style="display: inline; height: 200px; width: 300px"
@@ -84,7 +77,7 @@ Events </textarea
       </div>
       <!-- row-->
     </div>
-    <!-- ./container  leave at end before scripts-->
+    <!-- ./container  leave at end before scripts | needs to be moved and set to display ticket master results-->
 
     <!--Import jQuery before materialize.js-->
     <script
@@ -104,27 +97,43 @@ Events </textarea
     <script>
       //Call Geocode
       geocode();
+     
+      function geocode(){
+        document.getElementById("clicky").addEventListener("click", function(){
+        var location = document.getElementById("location").value;
+       
+        console.log(location);
+          axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
+          params:{
+          address:location,
+          key:'AIzaSyAJqPiU55pKZCjTYGXfzRdVF1pHtM77u30'
+          }
+        })
+      .then(function(response){
+        //Log full response
+        console.log(response)
+ 
+        //Formatted Address
+        
+        lat = response.data.results[0].geometry.location.lat;
+        lng = response.data.results[0].geometry.location.lng;
+        var latitude = parseFloat(lat);
+        var longitude = parseFloat(lng);
 
-      function geocode() {
-        var location = "22 Main st Boston MA";
-        axios
-          .get("https://maps.googleapis.com/maps/api/geocode/json", {
-            params: {
-              address: location,
-              key: "AIzaSyAJqPiU55pKZCjTYGXfzRdVF1pHtM77u30",
-            },
-          })
-          .then(function (response) {
-            //Log full response
-            console.log(response);
+        var locate = response.data.results[0].address_components[0].long_name
+        localStorage.setItem('locate', locate);
 
-            //Formatted Address
-            console.log(response.data.results[0].geometry.location);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      }
+        localStorage.setItem('Latitude', latitude)
+        localStorage.setItem('Longitude', longitude)
+        window.location.reload();
+      })
+   
+      .catch(function(error){
+        console.log(error);
+    });
+  });
+}
     </script>
+
   </body>
 </html>
