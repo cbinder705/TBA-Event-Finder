@@ -23,7 +23,7 @@ We used the VS Code software to edit code, git and git branches to work on the c
 
 We used the following technologies:<br>
 *Server-side APIs: Ticketmaster for events and Google Maps for the maps<br>
-*CSS framework: Materialize<br>
+*CSS framework: Materialize  <br>
 *HTML<br>
 *CSS<br>
 *JavaScript<br>
