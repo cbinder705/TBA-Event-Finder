@@ -21,7 +21,17 @@ SO THAT I can select an event to attend<br>
 
 We used the VS Code software to edit code, git and git branches to work on the code among our group and pull code to our local machines and then git again to push our final versions from our branches to the GitHub main branch.  
 
-We also used Server-side APIs: Ticketmaster for events, XXXXX for XXX, CSS framework: Materialize, HTML, CSS, JavaScript, VS Code, Git/GitHub and persistent data/local storage to retrieve past event searches.  This website is responsive, including the background image.
+We used the following technologies:<br>
+*Server-side APIs: Ticketmaster for events and Google Maps for the maps<br>
+*CSS framework: Materialize<br>
+*HTML<br>
+*CSS<br>
+*JavaScript<br>
+*VS Code<br>
+*Git/GitHub<br>
+*persistent data/local storage<br>
+
+This website is responsive, including the background image.
 
 ## Usage
 
