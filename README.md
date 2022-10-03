@@ -59,7 +59,7 @@ N/A
 
 ## Features
 
-The main features of this website allow people to select the type of event they want to look up from either Sports, Concerts or Comedy Shows.  They also enter the location where they want to go to the event.  Then they push a View Events button that causes a Google Map, events list and previous event searches to be displayed at the bottom of the page.
+There is a background image showing a stage with a textbox to enter the city where the person wants to see an event.  There's a button called View Events that displays a Google map and events in the entered city in boxes below the button.
 
 ## How-to-Contribute
 
