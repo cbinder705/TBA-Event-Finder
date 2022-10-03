@@ -36,13 +36,13 @@
         <h3 class="center-align">Local Event Finder</h3>
         <p class="flow-text"
           >Welcome to our local event finder. Enter
-          the desired state for the events (ie. New Jersey, Pennsylvania, Maryland,
+          the desired state for the events (ie. Trenton, Philidelphia, Baltimore,
           etc.). Then press the View Events button.</p
         >
         <form class="col s12">
           <div class="card-panel">
             <div class="input-field">
-              <input type="text" placeholder="Enter state" id="location" />
+              <input type="text" placeholder="Enter city" id="location" />
               <label class="active" for="location">Location</label>
             </div>
             <a id="clicky" class="btn">View Events</a>
@@ -114,10 +114,15 @@ Events </textarea
         console.log(response)
  
         //Formatted Address
+        
         lat = response.data.results[0].geometry.location.lat;
         lng = response.data.results[0].geometry.location.lng;
         var latitude = parseFloat(lat);
         var longitude = parseFloat(lng);
+
+        var locate = response.data.results[0].address_components[0].long_name
+        localStorage.setItem('locate', locate);
+
         localStorage.setItem('Latitude', latitude)
         localStorage.setItem('Longitude', longitude)
         window.location.reload();

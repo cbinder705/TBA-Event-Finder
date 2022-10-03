@@ -3,9 +3,12 @@
 // Use of the Maps API
 
 // Use of the Events API
+
 function events(city) {
+  var city1 = localStorage.getItem("locate");
+  console.log(city1);
   fetch(
-    "https://app.ticketmaster.com/discovery/v2/events.json?&city=Philadelphia&apikey=25HXWz0Ao4txUIjAm8EGenva5u1M7pt0"
+    "https://app.ticketmaster.com/discovery/v2/events.json?&city="+ city1 +"&apikey=25HXWz0Ao4txUIjAm8EGenva5u1M7pt0"
   )
     .then((response) => response.json())
     .then(DisplayEvents)
@@ -109,7 +112,7 @@ function initMap() {
 
   // The map, centered to the location given at Axios
   var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 5,
+    zoom: 8,
     center: location,
   });
   // The markers 1-5
