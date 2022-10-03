@@ -12,6 +12,7 @@ function events(city) {
   )
     .then((response) => response.json())
     .then(DisplayEvents)
+    .then(eventupdate)
     .then(initMap);
 }
 events();
@@ -79,6 +80,28 @@ function DisplayEvents(data) {
   localStorage.setItem("Longitude3", eventLongitude3);
   localStorage.setItem("Latitude4", eventLatitude4);
   localStorage.setItem("Longitude4", eventLongitude4);
+}
+function eventupdate(){
+  var Name0 = localStorage.getItem("Name0");
+  var Url0 = localStorage.getItem("Url0");
+  var Name1 = localStorage.getItem("Name1");
+  var Url1 = localStorage.getItem("Url1");
+  var Name2 = localStorage.getItem("Name2");
+  var Url2 = localStorage.getItem("Url2");
+  var Name3 = localStorage.getItem("Name3");
+  var Url3 = localStorage.getItem("Url3");
+  var Name4 = localStorage.getItem("Name4");
+  var Url4 = localStorage.getItem("Url4");
+  document.getElementById("Name0").innerHTML = Name0
+  document.getElementById("Url0").innerHTML = Url0
+  document.getElementById("Name1").innerHTML = Name1
+  document.getElementById("Url1").innerHTML = Url1
+  document.getElementById("Name2").innerHTML = Name2
+  document.getElementById("Url2").innerHTML = Url2
+  document.getElementById("Name3").innerHTML = Name3
+  document.getElementById("Url3").innerHTML = Url3
+  document.getElementById("Name4").innerHTML = Name4
+  document.getElementById("Url4").innerHTML = Url4
 }
 
 // Instantiate a map and platform object:

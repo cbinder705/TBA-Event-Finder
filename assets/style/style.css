@@ -3,7 +3,8 @@
 #map {
     height: 300px;
     /* The height is 400 pixels */
-    width: 30%;
+    width: 100%;
     /* The width is the width of the web page */
+    overflow: clip;
 }
 
