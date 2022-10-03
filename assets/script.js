@@ -38,7 +38,7 @@ function DisplayEvents(data) {
   let eventLink4 = data._embedded.events[4].url;
   localStorage.setItem("Name4", eventName4);
   localStorage.setItem("Url4", eventLink4);
-
+  
   let evtLatitude0 =
     data._embedded.events[0]._embedded.venues[0].location.latitude;
   let evtLongitude0 =
